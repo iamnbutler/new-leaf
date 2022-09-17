@@ -34,27 +34,18 @@ export default function LeftNav() {
         <li>
           <NavLink
             name="About this site"
-            href="https://github.com/iamnbutler/design-docs/blob/main/README.md"
+            href="https://github.com/iamnbutler/new-leaf/blob/main/README.md"
           />
           <NavLink
             name="Fix something"
-            href="https://github.com/iamnbutler/design-docs/blob/main/CONTRIBUTING.md"
+            href="https://github.com/iamnbutler/new-leaf/pulls"
           />
           <NavLink
             name="Release notes"
-            href="https://github.com/iamnbutler/design-docs/releases"
+            href="https://github.com/iamnbutler/new-leaf/releases"
           />
         </li>
       </ul>
-      <div className="flex flex-col px-3 py-2 space-y-2 text-sm opacity-50 group text-base04 hover:opacity-100">
-        <p>Some text on the liscense.</p>
-        <a
-          href="https://github.com/iamnbutler/design-docs/blob/main/LICENSE"
-          className="underline hover:text-base08"
-        >
-          CC-SOME-LISCENSE
-        </a>
-      </div>
     </nav>
   );
 }
