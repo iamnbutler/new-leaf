@@ -2,22 +2,22 @@
 // Some examples of base16 themes here: https://github.com/chriskempson/base16
 
 const theme = {
-  base00: "#1E2025",
-  base01: "#23262E",
-  base02: "#292E38",
-  base03: "#2E323C",
-  base04: "#ACA8AE",
-  base05: "#CBC9CF",
-  base06: "#E1DDE4",
-  base07: "#F7F7F8",
-  base08: "#F92672",
-  base09: "#F39C12",
-  base0A: "#FFE66D",
-  base0B: "#96E072",
-  base0C: "#00E8C6",
-  base0D: "#0CA793",
-  base0E: "#8A3FA6",
-  base0F: "#C74DED",
+  base00: "#32302f",
+  base01: "#3c3836",
+  base02: "#504945",
+  base03: "#665c54",
+  base04: "#bdae93",
+  base05: "#d5c4a1",
+  base06: "#ebdbb2",
+  base07: "#fbf1c7",
+  base08: "#fb4934",
+  base09: "#fe8019",
+  base0A: "#fabd2f",
+  base0B: "#b8bb26",
+  base0C: "#8ec07c",
+  base0D: "#83a598",
+  base0E: "#d3869b",
+  base0F: "#d65d0e",
 };
 
 // Utilities from tailwind typography's default config
