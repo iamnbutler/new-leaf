@@ -1,4 +1,4 @@
-import { AcademicCapIcon, CpuChipIcon } from "@heroicons/react/24/solid";
+import { AcademicCapIcon, CpuChipIcon, PrinterIcon } from "@heroicons/react/24/solid";
 import NavLink from "./NavLink";
 
 const navigation = [
@@ -11,6 +11,11 @@ const navigation = [
     name: "Design Docs",
     href: "/posts/design-docs",
     icon: <AcademicCapIcon className="w-4 h-4" />,
+  },
+  {
+    name: "Printing Jewelry",
+    href: "/posts/printing-jewelry",
+    icon: <PrinterIcon className="w-4 h-4" />,
   },
 ];
 
