@@ -7,16 +7,6 @@ const navigation = [
     href: "/posts/art-with-automator",
     icon: <CpuChipIcon className="w-4 h-4" />,
   },
-  {
-    name: "Design Docs",
-    href: "/posts/design-docs",
-    icon: <AcademicCapIcon className="w-4 h-4" />,
-  },
-  {
-    name: "Printing Jewelry",
-    href: "/posts/printing-jewelry",
-    icon: <PrinterIcon className="w-4 h-4" />,
-  },
 ];
 
 export default function LeftNav() {
