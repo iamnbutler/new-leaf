@@ -11,4 +11,4 @@ export const GithubIcon = () => (
       fill="currentColor"
     />
   </svg>
-)
+);

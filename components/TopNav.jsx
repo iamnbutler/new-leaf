@@ -11,7 +11,7 @@ const tools = [
   {
     name: "Nate on Github",
     href: "https://github.com/iamnbutler",
-    icon: <GithubIcon />
+    icon: <GithubIcon />,
   },
 ];
 

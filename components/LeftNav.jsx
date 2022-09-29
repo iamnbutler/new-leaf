@@ -1,4 +1,8 @@
-import { AcademicCapIcon, CpuChipIcon, PrinterIcon } from "@heroicons/react/24/solid";
+import {
+  AcademicCapIcon,
+  CpuChipIcon,
+  PrinterIcon,
+} from "@heroicons/react/24/solid";
 import NavLink from "./NavLink";
 
 const navigation = [
