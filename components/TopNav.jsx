@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { GithubIcon } from "./Icon";
+import { GithubIcon } from "./icons/github";
 import { TwitterIcon } from "./icons/twitter";
 
 const tools = [
@@ -11,7 +11,7 @@ const tools = [
   {
     name: "Nate on Github",
     href: "https://github.com/iamnbutler",
-    icon: <GithubIcon />,
+    icon: <GithubIcon />
   },
 ];
 
