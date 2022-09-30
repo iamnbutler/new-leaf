@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
 import path from "path";
@@ -8,6 +7,7 @@ import slug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import Layout from "../../components/Layout";
+import Markdown from "../../components/Markdown";
 import PageProse from "../../components/PageProse";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 
@@ -34,6 +34,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      content: content,
     },
   };
 };
@@ -51,14 +52,17 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function PostPage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter, content }) {
   const title = frontMatter.title;
   const description = frontMatter.description;
+  console.log(content)
 
   return (
     <Layout>
       <PageProse title={title} description={description}>
-        <MDXRemote {...source} components={components} />
+        <Markdown>
+          {content}
+        </Markdown>
       </PageProse>
     </Layout>
   );
