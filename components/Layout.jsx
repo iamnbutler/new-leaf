@@ -1,6 +1,7 @@
 import LeftNav from "./LeftNav";
 import TopNav from "./TopNav";
 import SkipLink from "./SkipLink";
+import TableOfContents from "./TableOfContents";
 
 export default function Layout({ children }) {
   return (
@@ -12,9 +13,9 @@ export default function Layout({ children }) {
             <TopNav />
           </div>
         </div>
-        <div className="flex flex-grow mx-auto space-x-1 max-w-7xl h-full">
+        <div className="flex flex-grow mx-auto space-x-1 w-full h-full">
           <LeftNav />
-          <div className="w-full">
+          <div className="flex flex-grow">
             {/* Main has focus:outline-none to prevent a focus ring when jumping to it from the skip link */}
             <main
               className="max-w-4xl px-16 mx-auto border-border focus:outline-none"
@@ -24,6 +25,7 @@ export default function Layout({ children }) {
               {children}
             </main>
           </div>
+          <TableOfContents />
         </div>
       </div>
     </>

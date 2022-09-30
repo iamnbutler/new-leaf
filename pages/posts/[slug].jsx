@@ -55,7 +55,6 @@ export const getStaticPaths = async () => {
 export default function PostPage({ source, frontMatter, content }) {
   const title = frontMatter.title;
   const description = frontMatter.description;
-  console.log(content)
 
   return (
     <Layout>

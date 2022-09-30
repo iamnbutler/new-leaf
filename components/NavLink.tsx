@@ -1,12 +1,24 @@
 import { default as NextLink } from "next/link";
 import { useRouter } from "next/router";
 import { ExternalIcon } from "./Icon";
+import React from "react";
 
-function classNames(...classes) {
+function classNames(...classes: any) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Link({ href, name, icon, external = false }) {
+export const navLinkActive = "text-blue"
+export const navLinkInactive = "text-secondary"
+export const navLinkCommon = "group flex items-center pl-3 pr-8 py-2 space-x-3 rounded-lg text-md font-bold opacity-80 hover:opacity-100"
+
+interface NavLinkProps {
+  href: string,
+  name: string,
+  icon?: React.ReactNode,
+  external?: boolean
+}
+
+export default function Link({ href, name, icon, external = false }: NavLinkProps) {
   let current = useRouter().asPath === href;
 
   return (
@@ -14,9 +26,9 @@ export default function Link({ href, name, icon, external = false }) {
       <a className={
         classNames(
           current
-            ? "text-blue"
-            : "text-secondary",
-          "group flex items-center pl-3 pr-8 py-2 space-x-3 rounded-lg text-md font-bold opacity-80 hover:opacity-100"
+            ? navLinkActive
+            : navLinkInactive,
+          navLinkCommon
         )
       } aria-current={current && "page"}>
         {icon && (

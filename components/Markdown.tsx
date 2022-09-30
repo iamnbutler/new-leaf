@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 
 interface MarkdownProps {
@@ -33,7 +34,8 @@ export default function Markdown({ children, margins = true }: MarkdownProps) {
           a: ({ node, ...props }) => <a className='text-purple-500 underline' {...props} />,
           blockquote: ({ node, ...props }) => <blockquote className={markdownStyle(markdownBLOCKQUOTE)} {...props} />,
         }}
-        remarkPlugins={[remarkGfm]} />
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeSlug]} />
     </div>
   )
 }
