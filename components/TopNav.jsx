@@ -20,7 +20,7 @@ export default function TopNav() {
     <nav className="flex justify-between px-6 mr-6 py-1">
       <div className="flex items-center space-x-4 grow">
         <NextLink href="/">
-          <a className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-base0A hover:opacity-80">
+          <a className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-yellow hover:opacity-80">
             <span className="flex">🌱</span>
             <span className="flex">Nate Butler</span>
           </a>
@@ -35,7 +35,7 @@ export default function TopNav() {
             key={tool.name}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center w-8 h-8 space-x-2 border rounded-lg bg-base00 hover:opacity-80 border-base04/10 text-md text-base06 drop-shadow-md"
+            className="flex items-center justify-center w-8 h-8 space-x-2 border rounded-lg bg-base hover:opacity-80 border-border text-md text-secondary drop-shadow-md"
           >
             {tool.icon}
           </a>

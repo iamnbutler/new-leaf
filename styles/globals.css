@@ -13,23 +13,23 @@
 
 :root,
 html {
-  --neutral-900: #282c34;
-  --neutral-800: #2c323b;
-  --neutral-700: #3e4451;
-  --neutral-600: #665c54;
-  --neutral-400: #928374;
-  --neutral-300: #a89984;
-  --neutral-200: #d5c4a1;
-  --neutral-100: #fdf4c1;
+  --neutral-900: #1c1810;
+  --neutral-800: #2a261c;
+  --neutral-700: #3a3527;
+  --neutral-600: #504b38;
+  --neutral-400: #5f5b45;
+  --neutral-300: #736e55;
+  --neutral-200: #bab696;
+  --neutral-100: #f8f5de;
 
-  --red: #83a598;
-  --orange: #a07e3b;
-  --yellow: #b57614;
-  --green: #528b8b;
-  --blue: #83a598;
-  --teal: #427b58;
-  --purple: #d75f5f;
-  --brown: #a87322;
+  --red: #e35142;
+  --orange: #fba11b;
+  --yellow: #f2ff27;
+  --green: #5ceb5a;
+  --blue: #5aebbc;
+  --teal: #489bf0;
+  --purple: #FF8080;
+  --brown: #F69BE7;
 }
 
 html {
@@ -78,7 +78,7 @@ body {
   --border: var(--neutral-700);
   --surface: var(--neutral-800);
   --primary: var(--neutral-100);
-  --secondary: var(--neutral-300);
+  --secondary: var(--neutral-200);
   --semi: rgba(255,255,255,0.1);
   --onMedia: var(--neutral-100);
 }
