@@ -16,7 +16,7 @@ export default function Link({ href, name, icon, external = false }) {
           current
             ? "text-blue"
             : "text-secondary",
-          "group flex items-center px-3 py-2 space-x-3 rounded-lg text-md font-bold opacity-80 hover:opacity-100"
+          "group flex items-center pl-3 pr-8 py-2 space-x-3 rounded-lg text-md font-bold opacity-80 hover:opacity-100"
         )
       } aria-current={current && "page"}>
         {icon && (

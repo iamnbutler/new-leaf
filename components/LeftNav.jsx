@@ -6,12 +6,12 @@ import NavLink from "./NavLink";
 
 const navigation = [
   {
-    name: "Worlds with DALL-E",
+    name: "Imagining Worlds with DALL-E",
     href: "/posts/worlds-with-dalle",
     icon: <InvaderIcon className="w-4 h-4" />,
   },
   {
-    name: "Art with Automator",
+    name: "Figma art with Automator",
     href: "/posts/art-with-automator",
     icon: <CpuChipIcon className="w-4 h-4" />,
   },
@@ -20,7 +20,7 @@ const navigation = [
 export default function LeftNav() {
   return (
     <nav
-      className="min-h-full py-8 mx-2 space-y-1 border-r w-96 border-border"
+      className="min-h-full py-8 mx-2 space-y-1 border-r border-border"
       aria-label="Sidebar"
     >
       <div className="pb-4">
