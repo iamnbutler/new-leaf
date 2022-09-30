@@ -2,8 +2,11 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import Layout from "../components/Layout";
+import Markdown from "../components/Markdown";
 import PageProse from "../components/PageProse";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
+
+const helloWorld = "**Hello** _World_"
 
 export default function Index() {
   return (
@@ -21,6 +24,9 @@ export default function Index() {
           Say hi on <a href="https://twitter.com/iamnbutler">Twitter!</a>
         </p>
       </PageProse>
+      <Markdown>
+        {helloWorld}
+      </Markdown>
     </Layout>
   );
 }

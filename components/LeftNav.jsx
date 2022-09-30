@@ -1,11 +1,15 @@
 import {
-  AcademicCapIcon,
   CpuChipIcon,
-  PrinterIcon,
 } from "@heroicons/react/24/solid";
+import { InvaderIcon } from "./icons/invader";
 import NavLink from "./NavLink";
 
 const navigation = [
+  {
+    name: "Worlds with DALL-E",
+    href: "/posts/worlds-with-dalle",
+    icon: <InvaderIcon className="w-4 h-4" />,
+  },
   {
     name: "Art with Automator",
     href: "/posts/art-with-automator",
@@ -16,7 +20,7 @@ const navigation = [
 export default function LeftNav() {
   return (
     <nav
-      className="min-h-full py-8 mx-2 space-y-1 border-r w-96 border-base03"
+      className="min-h-full py-8 mx-2 space-y-1 border-r w-96 border-border"
       aria-label="Sidebar"
     >
       <div className="pb-4">
@@ -29,7 +33,7 @@ export default function LeftNav() {
           />
         ))}
       </div>
-      <ul className="pt-4 border-t border-base03">
+      <ul className="pt-4 border-t border-border">
         <li>
           <NavLink
             name="About this site"

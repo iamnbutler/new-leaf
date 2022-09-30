@@ -11,13 +11,45 @@
   }
 }
 
-:root {
-  --background: #191724;
-  --scrollbarBG: transparent;
+:root,
+html {
+  --neutral-900: #282c34;
+  --neutral-800: #2c323b;
+  --neutral-700: #3e4451;
+  --neutral-600: #665c54;
+  --neutral-400: #928374;
+  --neutral-300: #a89984;
+  --neutral-200: #d5c4a1;
+  --neutral-100: #fdf4c1;
+
+  --red: #83a598;
+  --orange: #a07e3b;
+  --yellow: #b57614;
+  --green: #528b8b;
+  --blue: #83a598;
+  --teal: #427b58;
+  --purple: #d75f5f;
+  --brown: #a87322;
 }
 
 html {
   font-family: "Inter", sans-serif;
+}
+
+html,
+body,
+#__next {
+  min-height: 100%;
+}
+
+html {
+  width: 100vw;
+}
+
+body,
+#__next {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @supports (font-variation-settings: normal) {
@@ -33,4 +65,30 @@ body {
   text-rendering: geometricPrecision !important;
   -webkit-font-smoothing: antialiased !important;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.005);
+}
+
+/* This is a hack that is supposed to help with flashing due to tailwind filter elements */
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+[data-theme='dark'] {
+  --base: var(--neutral-900);
+  --border: var(--neutral-700);
+  --surface: var(--neutral-800);
+  --primary: var(--neutral-100);
+  --secondary: var(--neutral-300);
+  --semi: rgba(255,255,255,0.1);
+  --onMedia: var(--neutral-100);
+}
+
+[data-theme='light'] {
+  --base: var(--neutral-900);
+  --border: var(--neutral-700);
+  --surface: var(--neutral-100);
+  --primary: var(--neutral-900);
+  --secondary: var(--neutral-800);
+  --semi: rgba(0,0,0,0.1);
+  --onMedia: var(--neutral-100);
 }
