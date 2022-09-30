@@ -57,7 +57,7 @@ export default function PostPage({ source, frontMatter, content }) {
   const description = frontMatter.description;
 
   return (
-    <Layout>
+    <Layout toc>
       <PageProse title={title} description={description}>
         <Markdown>
           {content}

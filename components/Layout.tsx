@@ -3,7 +3,12 @@ import TopNav from "./TopNav";
 import SkipLink from "./SkipLink";
 import TableOfContents from "./TableOfContents";
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode,
+  toc?: boolean
+}
+
+export default function Layout({ children, toc }: LayoutProps) {
   return (
     <>
       <div className="relative flex flex-col w-screen min-h-screen space-x-1 overflow-x-hidden">
@@ -25,7 +30,7 @@ export default function Layout({ children }) {
               {children}
             </main>
           </div>
-          <TableOfContents />
+          {toc && <TableOfContents />}
         </div>
       </div>
     </>
