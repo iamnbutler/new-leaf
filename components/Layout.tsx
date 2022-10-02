@@ -11,9 +11,9 @@ interface LayoutProps {
 export default function Layout({ children, toc }: LayoutProps) {
   return (
     <>
-      <div className="relative flex flex-col w-screen min-h-screen space-x-1 overflow-x-hidden">
+      <div className="relative w-screen min-h-screen overflow-x-hidden">
         <SkipLink />
-        <div className="w-full border-b bg-surface border-border">
+        <div className="sticky w-full border-b bg-surface border-border m-0">
           <div className="mx-auto font-mono">
             <TopNav />
           </div>
@@ -35,19 +35,4 @@ export default function Layout({ children, toc }: LayoutProps) {
       </div>
     </>
   );
-}
-
-export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
-    const { content, data } = matter(source);
-
-    return {
-      content,
-      data,
-      filePath,
-    };
-  });
-
-  return { props: { posts } };
 }

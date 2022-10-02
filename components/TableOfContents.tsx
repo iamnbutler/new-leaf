@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { markdownUL } from "./Markdown";
 import NavLink from "./NavLink"
 
 // TODO: Re-write this. Taken from https://www.emgoto.com/react-table-of-contents/
@@ -53,7 +54,7 @@ const Headings = ({ headings }) => (
       <li key={heading.id}>
         <NavLink name={heading.title} href={`#${heading.id}`} />
         {heading.items && heading.items.length > 0 && (
-          <ul>
+          <ul className={markdownUL}>
             {heading.items.map((child) => (
               <li key={child.id}>
                 <NavLink name={child.title} href={`#${child.id}`} />

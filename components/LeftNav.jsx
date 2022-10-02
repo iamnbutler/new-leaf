@@ -34,20 +34,26 @@ export default function LeftNav() {
         ))}
       </div>
       <ul className="pt-4 border-t border-border">
-        <li>
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
             name="About this site"
             href="https://github.com/iamnbutler/new-leaf/blob/main/README.md"
           />
+        </li>
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
             name="Fix something"
             href="https://github.com/iamnbutler/new-leaf/pulls"
           />
+        </li>
+
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
             name="Release notes"
             href="https://github.com/iamnbutler/new-leaf/releases"
           />
         </li>
+
       </ul>
     </nav>
   );
