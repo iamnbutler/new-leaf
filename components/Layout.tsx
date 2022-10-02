@@ -5,7 +5,7 @@ import TableOfContents from "./TableOfContents";
 
 interface LayoutProps {
   children: React.ReactNode,
-  toc?: boolean
+  toc?: React.ReactNode
 }
 
 export default function Layout({ children, toc }: LayoutProps) {
@@ -30,7 +30,7 @@ export default function Layout({ children, toc }: LayoutProps) {
               {children}
             </main>
           </div>
-          {toc && <TableOfContents />}
+          {toc && toc}
         </div>
       </div>
     </>
