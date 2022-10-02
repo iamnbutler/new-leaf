@@ -42,14 +42,14 @@ export default function LeftNav() {
         </li>
         <li className="opacity-50 hover:opacity-100">
           <NavLink
-            name="Fix something"
+            name="Pull Requests"
             href="https://github.com/iamnbutler/new-leaf/pulls"
           />
         </li>
 
         <li className="opacity-50 hover:opacity-100">
           <NavLink
-            name="Release notes"
+            name="Version History"
             href="https://github.com/iamnbutler/new-leaf/releases"
           />
         </li>

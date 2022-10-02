@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import Layout from "../../components/Layout";
-import Markdown, { markdownUL } from "../../components/Markdown";
+import Markdown from "../../components/Markdown";
 import PageProse from "../../components/PageProse";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils"
 
@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function PostPage({ source, frontMatter, content }) {
+export default function PostPage({ frontMatter, content }) {
   const title = frontMatter.title;
   const description = frontMatter.description;
 

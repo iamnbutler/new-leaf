@@ -10,19 +10,14 @@ interface LayoutProps {
 export default function Layout({ children, toc }: LayoutProps) {
   return (
     <>
-      <div className="relative w-screen min-h-screen overflow-x-hidden">
-        <SkipLink />
-        <div className="sticky w-full border-b bg-surface border-border m-0">
-          <div className="mx-auto font-mono">
-            <TopNav />
-          </div>
-        </div>
-        <div className="flex flex-grow mx-auto space-x-1 w-full h-full">
+      <div className="w-screen min-h-screen overflow-x-hidden">
+        <TopNav />
+        <div className="z-0 mt-12 flex mx-auto w-full h-full">
           <LeftNav />
           <div className="flex flex-grow">
             {/* Main has focus:outline-none to prevent a focus ring when jumping to it from the skip link */}
             <main
-              className="max-w-4xl px-16 mx-auto border-border focus:outline-none"
+              className="max-w-4xl px-16 mx-auto focus:outline-none"
               id="main-content"
               tabIndex={-1}
             >
@@ -30,6 +25,7 @@ export default function Layout({ children, toc }: LayoutProps) {
             </main>
           </div>
         </div>
+        // <SkipLink />
       </div>
     </>
   );

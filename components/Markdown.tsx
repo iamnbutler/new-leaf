@@ -8,7 +8,7 @@ interface MarkdownProps {
   margins?: boolean
 }
 
-export const markdownH1 = "prose-h1 text-4xl font-bold my-4"
+export const markdownH1 = "prose-h1 text-5xl font-bold my-4"
 export const markdownH2 = "prose-h2 text-3xl font-bold my-4"
 export const markdownH3 = "prose-h3 text-2xl font-bold my-2"
 export const markdownP = "prose-p my-4"
