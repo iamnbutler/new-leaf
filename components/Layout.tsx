@@ -1,7 +1,6 @@
 import LeftNav from "./LeftNav";
 import TopNav from "./TopNav";
 import SkipLink from "./SkipLink";
-import TableOfContents from "./TableOfContents";
 
 interface LayoutProps {
   children: React.ReactNode,
@@ -30,7 +29,6 @@ export default function Layout({ children, toc }: LayoutProps) {
               {children}
             </main>
           </div>
-          {toc && toc}
         </div>
       </div>
     </>
