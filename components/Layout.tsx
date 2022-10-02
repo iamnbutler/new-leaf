@@ -4,10 +4,9 @@ import SkipLink from "./SkipLink";
 
 interface LayoutProps {
   children: React.ReactNode,
-  toc?: React.ReactNode
 }
 
-export default function Layout({ children, toc }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <div className="w-screen min-h-screen overflow-x-hidden">
@@ -25,7 +24,7 @@ export default function Layout({ children, toc }: LayoutProps) {
             </main>
           </div>
         </div>
-        // <SkipLink />
+        <SkipLink />
       </div>
     </>
   );

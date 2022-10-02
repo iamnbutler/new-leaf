@@ -16,9 +16,11 @@ Say hi on [Twitter](https://twitter.com/iamnbutler)`
 export default function Index() {
   return (
     <Layout>
-      <Markdown>
-        {intro}
-      </Markdown>
+      <div className="py-12">
+        <Markdown>
+          {intro}
+        </Markdown>
+      </div>
     </Layout>
   );
 }

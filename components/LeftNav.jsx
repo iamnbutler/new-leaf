@@ -1,15 +1,9 @@
 import {
   CpuChipIcon,
 } from "@heroicons/react/24/solid";
-import { InvaderIcon } from "./icons/invader";
 import NavLink from "./NavLink";
 
 const navigation = [
-  {
-    name: "Imagining Worlds with DALL-E",
-    href: "/posts/worlds-with-dalle",
-    icon: <InvaderIcon className="w-4 h-4" />,
-  },
   {
     name: "Figma art with Automator",
     href: "/posts/art-with-automator",
