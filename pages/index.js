@@ -2,25 +2,23 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import Layout from "../components/Layout";
-import PageProse from "../components/PageProse";
+import Markdown from "../components/Markdown";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
+
+const intro = `# Nate Butler
+  
+I'm Nate, a designer & developer. I like building tools, automating things, and contributing to design education.
+
+I'm currently focused on building collaborative software tools at [Zed Industries](https://zed.dev).
+
+Say hi on [Twitter](https://twitter.com/iamnbutler)`
 
 export default function Index() {
   return (
     <Layout>
-      <PageProse title="Nate Butler">
-        <p>
-          I&apos;m Nate, a designer & developer. I like building tools,
-          automating things, and contributing to design education.
-        </p>
-        <p>
-          I&apos;m currently focused on building collaborative software tools at{" "}
-          <a href="https://zed.dev">Zed Industries</a>.
-        </p>
-        <p>
-          Say hi on <a href="https://twitter.com/iamnbutler">Twitter!</a>
-        </p>
-      </PageProse>
+      <Markdown>
+        {intro}
+      </Markdown>
     </Layout>
   );
 }

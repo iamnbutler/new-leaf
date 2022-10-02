@@ -1,13 +1,17 @@
 import {
-  AcademicCapIcon,
   CpuChipIcon,
-  PrinterIcon,
 } from "@heroicons/react/24/solid";
+import { InvaderIcon } from "./icons/invader";
 import NavLink from "./NavLink";
 
 const navigation = [
   {
-    name: "Art with Automator",
+    name: "Imagining Worlds with DALL-E",
+    href: "/posts/worlds-with-dalle",
+    icon: <InvaderIcon className="w-4 h-4" />,
+  },
+  {
+    name: "Figma art with Automator",
     href: "/posts/art-with-automator",
     icon: <CpuChipIcon className="w-4 h-4" />,
   },
@@ -16,7 +20,7 @@ const navigation = [
 export default function LeftNav() {
   return (
     <nav
-      className="min-h-full py-8 mx-2 space-y-1 border-r w-96 border-base03"
+      className="min-h-full py-8 mx-2 space-y-1 border-r border-border"
       aria-label="Sidebar"
     >
       <div className="pb-4">
@@ -29,21 +33,27 @@ export default function LeftNav() {
           />
         ))}
       </div>
-      <ul className="pt-4 border-t border-base03">
-        <li>
+      <ul className="pt-4 border-t border-border">
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
             name="About this site"
             href="https://github.com/iamnbutler/new-leaf/blob/main/README.md"
           />
+        </li>
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
-            name="Fix something"
+            name="Pull Requests"
             href="https://github.com/iamnbutler/new-leaf/pulls"
           />
+        </li>
+
+        <li className="opacity-50 hover:opacity-100">
           <NavLink
-            name="Release notes"
+            name="Version History"
             href="https://github.com/iamnbutler/new-leaf/releases"
           />
         </li>
+
       </ul>
     </nav>
   );
