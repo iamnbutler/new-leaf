@@ -8,13 +8,22 @@ interface MarkdownProps {
   margins?: boolean
 }
 
-export const markdownH1 = "prose-h1 text-5xl font-bold my-4"
-export const markdownH2 = "prose-h2 text-3xl font-bold my-4"
-export const markdownH3 = "prose-h3 text-2xl font-bold my-2"
-export const markdownP = "prose-p my-4"
-export const markdownUL = "prose-ul pl-4"
-export const markdownIMG = "prose-img my-2"
-export const markdownBLOCKQUOTE = "text-md text-secondary pl-4 border-l border-l-2 border-border"
+export const markdownH1 =
+  "md-h1 text-5xl font-bold mt-8 mb-4"
+export const markdownH2 =
+  "md-h2 text-3xl font-bold mt-16 mb-4"
+export const markdownH3 =
+  "md-h3 text-2xl font-bold my-2"
+export const markdownP =
+  "md-p my-4"
+export const markdownA =
+  "md-a text-blue hover:text-purple underline"
+export const markdownUL =
+  "md-ul pl-4"
+export const markdownIMG =
+  "md-img my-4"
+export const markdownBLOCKQUOTE =
+  "text-md text-secondary pl-4 border-l border-l-2 border-border"
 
 export default function Markdown({ children, margins = true }: MarkdownProps) {
 
@@ -33,7 +42,7 @@ export default function Markdown({ children, margins = true }: MarkdownProps) {
           img: ({ node, ...props }) => <img className={markdownStyle(markdownIMG)} {...props} />,
           ul: ({ node, ...props }) => <ul className={markdownStyle(markdownUL)} {...props} />,
           p: ({ node, ...props }) => <p className={markdownStyle(markdownP)} {...props} />,
-          a: ({ node, ...props }) => <a className='text-purple-500 underline' {...props} />,
+          a: ({ node, ...props }) => <a className={markdownStyle(markdownA)} {...props} />,
           blockquote: ({ node, ...props }) => <blockquote className={markdownStyle(markdownBLOCKQUOTE)} {...props} />,
         }}
         remarkPlugins={[remarkGfm]}
