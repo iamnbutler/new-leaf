@@ -33,13 +33,22 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function PostPage({ frontMatter, content }) {
+interface FrontMatter {
+  title: string,
+  description: string,
+  date_created: string,
+  tags: string[]
+}
+
+export default function PostPage({ frontMatter, content }: { frontMatter: FrontMatter, content: any }) {
   const title = frontMatter.title;
   const description = frontMatter.description;
+  const date = frontMatter.date_created
+  const tags = frontMatter.tags ? frontMatter.tags : null
 
   return (
     <Layout>
-      <PageProse title={title} description={description}>
+      <PageProse title={title} description={description} date={date}>
         <Markdown>
           {content}
         </Markdown>

@@ -24,6 +24,8 @@ export const markdownIMG =
   "md-img my-4"
 export const markdownBLOCKQUOTE =
   "text-md text-secondary pl-4 border-l border-l-2 border-border"
+export const markdownPRE =
+  "bg-surface p-3 rounded-lg border border-border overflow-x-auto text-sm drop-shadow-md"
 
 export default function Markdown({ children, margins = true }: MarkdownProps) {
 
@@ -44,6 +46,7 @@ export default function Markdown({ children, margins = true }: MarkdownProps) {
           p: ({ node, ...props }) => <p className={markdownStyle(markdownP)} {...props} />,
           a: ({ node, ...props }) => <a className={markdownStyle(markdownA)} {...props} />,
           blockquote: ({ node, ...props }) => <blockquote className={markdownStyle(markdownBLOCKQUOTE)} {...props} />,
+          pre: ({ node, ...props }) => <pre className={markdownStyle(markdownPRE)} {...props} />
         }}
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSlug]} />

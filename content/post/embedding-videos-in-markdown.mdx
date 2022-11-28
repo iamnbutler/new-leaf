@@ -1,0 +1,109 @@
+---
+uuid: ab4844c6-1aed-43bb-bfe7-60aa3ccbf000
+title: Embedding Videos in Markdown (in a React Environment)
+description: Creating an ergonomic way to add embedded videos with pure markdown inputs.
+date_created: 2022/11/28
+tags: [note]
+---
+
+Markdown doesn't have a native way to embed videos outside of using the `<video>` html tag, and often allowing people to add arbitrary HTML to markdown can be dangerous.
+
+When building Zed.dev we ran into this issue, and I came up with a somewhat obvious, but funcitonal approach to using the markdown image syntax for both images & videos.
+
+## The Hack
+
+When a markdown image tag (`![Alt Tag](path/to/image/src.format)`) provides a source with a video format (`.webm`, `.mp4`, `.mov`) we render a video component instead of an image component.
+
+```tsx
+// HACK: Check if src is a video format. If so, render a video instead of an image
+
+// Provide a list of video formats you want to support
+const videoFormats = [".webm", ".mp4"]
+const isVideo = videoFormats.some(function (v) {
+  // props are the props provided for the 
+  return props.src.indexOf(v) >= 0
+})
+
+let el
+
+if (isVideo) {
+  // Re-type to a Video element now that we know this is a video
+  const video: HTMLVideoElement = props
+  
+  // This specific example assumes you will always have a webm and an mp4
+  // With the path to the webm provided in the Markdown image tag
+  const source = {
+    webm: video.src,
+    mp4: video.src.replace(".webm", ".mp4"),
+  }
+
+  el = (
+    // Custom Video component
+  )
+} else {
+  // Re-type to an Image element now that we know this is a video
+  const img: HTMLImageElement = props
+  
+  el = (
+  // Custom Image component
+  )
+}
+
+return el
+```
+
+### Taking it Further
+
+There are a lot of ways we could take this further:
+
+- Improving format checking, and providing accepted formats for both Photos and Video
+- Allowing the passing of video options throught either the source or the alt tag
+- Example: `![Video caption](path/to/image/src.format|autoplay, mute)`)
+- Example: `![autoplay, mute](path/to/image/src.format)`)
+
+### Cons to This Approach
+- Videos won't render in a markdown preview, like on Github or preview view
+- Requires being in an environment you can pass custom components to your chosen Markdown renderer
+
+## Alternate Approaches
+
+### Frontmatter
+There is probably an alternate approach using frontmatter and custom IDs, something kind of like this:
+
+```markdown
+---
+title: My Title
+videos:
+  - id: video_1
+  src:
+    - webm: path/to/video_1/src.webm
+    - mp4: path/to/video_1/src.mp4
+  - id: video_2
+    src:
+      - webm: path/to/video_2/src.webm
+      - mp4: path/to/video_2/src.mp4
+---
+
+![Video 1 Caption](path/to/video_1/cover.png){#video_1}
+![Video 2 Caption](path/to/video_2/cover.png){#video_2}
+
+```
+
+Then use some shenanigans to swap the cover image and the video element.
+
+### Custom Video Element
+If you have the option to use something like `mdx` you can always just write a custom video element and call it inside your markdown like this:
+
+```mdx 
+# My Title
+
+<Video
+  cover='path/to/video_1/cover.png'
+  webm='path/to/video_1/cover.png'
+  mp4='path/to/video_1/cover.mp4'
+  autoplay
+  muted
+>
+Video Caption
+</Video>
+```
