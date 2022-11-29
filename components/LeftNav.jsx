@@ -27,7 +27,7 @@ const notes = [
 export default function LeftNav() {
   return (
     <nav
-      className="min-h-full py-8 mx-2 space-y-1 border-r border-border"
+      className="min-h-screen py-8 mx-2 space-y-1 border-r border-border"
       aria-label="Sidebar"
     >
       <div className="pb-4">
