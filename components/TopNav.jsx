@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import { GithubIcon } from "./icons/github";
 import { TwitterIcon } from "./icons/twitter";
 
@@ -20,12 +20,13 @@ export default function TopNav() {
     <div className="fixed top-0 z-10 w-full font-mono border-b bg-surface border-border">
       <nav className="flex justify-between px-6 py-1 shadow-md shadow-black/05">
         <div className="flex items-center space-x-4 grow">
-          <NextLink href="/">
-            <a className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-yellow hover:opacity-80">
-              <span className="flex">🌱</span>
-              <span className="flex">Nate Butler</span>
-            </a>
-          </NextLink>
+          <Link
+            href="/"
+            className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-yellow hover:opacity-80"
+          >
+            <span className="flex">🌱</span>
+            <span className="flex">Nate Butler</span>
+          </Link>
         </div>
         <div className="flex items-center space-x-4 text-base06">
           {/* TODO: Add tooltips to tools */}

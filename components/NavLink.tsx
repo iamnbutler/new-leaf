@@ -22,35 +22,33 @@ export default function Link({ href, name, icon, external = false }: NavLinkProp
   let current = useRouter().asPath === href;
 
   return (
-    <NextLink href={href} passHref>
-      <a className={
-        classNames(
-          current
-            ? navLinkActive
-            : navLinkInactive,
-          navLinkCommon
-        )
-      } aria-current={current && "page"}>
-        {icon && (
-          <div
-            className="p-1.5 flex items-center text-md rounded-lg space-x-2 border drop-shadow-md bg-surface border-border"
+    <NextLink href={href} className={
+      classNames(
+        current
+          ? navLinkActive
+          : navLinkInactive,
+        navLinkCommon
+      )
+    } aria-current={current && "page"}>
+      {icon && (
+        <div
+          className="p-1.5 flex items-center text-md rounded-lg space-x-2 border drop-shadow-md bg-surface border-border"
+        >
+          <span
           >
-            <span
-            >
-              {icon}
-            </span>
-          </div>
-        )}
-
-        <div>
-          <span className="truncate">{name}</span>
-          {external && (
-            <span className="font-mono text-xs opacity-50">
-              <ExternalIcon />
-            </span>
-          )}
+            {icon}
+          </span>
         </div>
-      </a>
+      )}
+
+      <div>
+        <span className="truncate">{name}</span>
+        {external && (
+          <span className="font-mono text-xs opacity-50">
+            <ExternalIcon />
+          </span>
+        )}
+      </div>
     </NextLink>
   );
 }
