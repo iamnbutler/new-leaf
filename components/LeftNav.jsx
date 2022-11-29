@@ -21,6 +21,14 @@ const notes = [
   {
     name: "Embedding Videos in Markdown",
     href: "/posts/embedding-videos-in-markdown"
+  },
+  {
+    name: "Design Docs V2",
+    href: "/posts/design-docs-v2"
+  },
+  {
+    name: "Accessing Fields in Airtable",
+    href: "/posts/accessing-fields-in-airtable"
   }
 ]
 
