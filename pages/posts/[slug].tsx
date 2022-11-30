@@ -1,58 +1,36 @@
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
-import Layout from "../../components/Layout";
-import Markdown from "../../components/Markdown";
-import PageProse from "../../components/PageProse";
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils"
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import Layout from "components/Layout";
+import PageProse from "components/PageProse";
+import { allTextPosts, TextPost } from "contentlayer/generated";
 
-export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+export default function PostPage({ post }: { post: TextPost }) {
+  const MDXContent = useMDXComponent(post.body.code)
 
-  const { content, data } = matter(source);
+  return (
+    <Layout>
+      <PageProse title={post.title} description={post.description.raw} date={post.date}>
+        <MDXContent />
+      </PageProse>
+    </Layout>
+  );
+}
 
-  return {
-    props: {
-      frontMatter: data,
-      content: content,
-    },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = postFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ""))
-    // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }));
-
+export async function getStaticPaths() {
+  const paths: string[] = allTextPosts.map((post) => post.url);
   return {
     paths,
     fallback: false,
   };
-};
-
-interface FrontMatter {
-  title: string,
-  description: string,
-  date_created: string,
-  tags: string[]
 }
 
-export default function PostPage({ frontMatter, content }: { frontMatter: FrontMatter, content: any }) {
-  const title = frontMatter.title;
-  const description = frontMatter.description;
-  const date = frontMatter.date_created
-  const tags = frontMatter.tags ? frontMatter.tags : null
-
-  return (
-    <Layout>
-      <PageProse title={title} description={description} date={date}>
-        <Markdown>
-          {content}
-        </Markdown>
-      </PageProse>
-    </Layout>
+export async function getStaticProps({ params }) {
+  const post = allTextPosts.find(
+    (post) => post._raw.flattenedPath === params.slug
   );
+
+  return {
+    props: {
+      post,
+    },
+  };
 }
