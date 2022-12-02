@@ -16,7 +16,8 @@
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     "noUnusedLocals": false /* Report errors on unused locals. */,
     "strict": true /* Enable all strict type-checking options. */,
-    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+    "outDir": "dist" /* Redirect output structure to the directory. */,
+    "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
     "typeRoots": [
       "./types",
       "node_modules/@types"
@@ -34,22 +35,15 @@
     "incremental": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "paths": {
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
-    }
+    "isolatedModules": true
   },
   "exclude": [
     "dist",
     "node_modules"
   ],
   "include": [
-    "types/**/*.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    ".contentlayer/generated"
+    "**/*.tsx"
   ]
 }

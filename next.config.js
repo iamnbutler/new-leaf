@@ -1,7 +1,5 @@
-const contentlayer = require("next-contentlayer")
-
-module.exports = contentlayer.withContentlayer({
+module.exports = {
   images: {
     domains: ['raw.githubusercontent.com'],
-  }
-})
+  },
+}
