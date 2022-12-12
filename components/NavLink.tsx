@@ -1,20 +1,9 @@
 import { default as NextLink } from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { Post } from "contentlayer/generated";
 
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
-
-interface NavLinkProps {
-  item: Post,
-  icon?: React.ReactNode,
-  external?: boolean
-}
-
-export default function Link({ item, external = false }: NavLinkProps) {
+export default function Link({ item }: { item: Post }) {
   const { url, title, featured, date_created, description } = item
   let current = useRouter().asPath === url;
 
