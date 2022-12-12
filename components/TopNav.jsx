@@ -17,8 +17,8 @@ const tools = [
 
 export default function TopNav() {
   return (
-    <div className="fixed top-0 z-10 w-full font-mono border-b bg-surface border-border">
-      <nav className="flex justify-between px-6 py-1 shadow-md shadow-black/05">
+    <div className="fixed top-0 z-10 w-full font-mono">
+      <nav className="flex justify-between px-6 py-1">
         <div className="flex items-center space-x-4 grow">
           <Link
             href="/"
