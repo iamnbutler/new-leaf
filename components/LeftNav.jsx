@@ -1,85 +1,43 @@
-import {
-  CpuChipIcon,
-} from "@heroicons/react/24/solid";
 import NavLink from "./NavLink";
-import { InvaderIcon } from "./icons/invader";
+import { posts } from "./post/Posts";
 
-const navigation = [
+const metaNav = [
   {
-    name: "Imagining Worlds with DALL·E",
-    href: "/posts/dalle-worlds",
-    icon: <InvaderIcon className="w-4 h-4" />,
+    title: "View on Github",
+    url: "https://github.com/iamnbutler/new-leaf"
   },
   {
-    name: "Figma art with Automator",
-    href: "/posts/art-with-automator",
-    icon: <CpuChipIcon className="w-4 h-4" />,
+    title: "Pull Requests",
+    url: "https://github.com/iamnbutler/new-leaf/pulls"
   },
-];
-
-const notes = [
-  {
-    name: "Embedding Videos in Markdown",
-    href: "/posts/embedding-videos-in-markdown"
-  },
-  {
-    name: "Design Docs V2",
-    href: "/posts/design-docs-v2"
-  },
-  {
-    name: "Accessing Fields in Airtable",
-    href: "/posts/accessing-fields-in-airtable"
-  }
 ]
 
 export default function LeftNav() {
   return (
     <nav
-      className="min-h-screen py-8 mx-2 space-y-1 border-r border-border"
+      className="min-h-screen space-y-1"
       aria-label="Sidebar"
     >
-      <div className="pb-4">
-        {navigation.map((item) => (
+      <div className="py-4 space-y-px">
+        {posts.map((item) => (
           <NavLink
-            name={item.name}
-            href={item.href}
-            icon={item.icon}
-            key={item.href}
+            item={item}
+            key={item.uuid}
           />
         ))}
       </div>
-      <div className="py-4 border-t border-border">
-        <h2 className="flex items-center pl-3 pr-8 py-2 space-x-3 rounded-lg text-md font-sans text-secondary opacity-50">Notes</h2>
-        {notes.map((item) => (
-          <NavLink
-            name={item.name}
-            href={item.href}
-            key={item.href}
-          />
+      <menu className="py-4 space-y-px flex flex-col">
+        {metaNav.map((item) => (
+          <a
+            href={item.url}
+            key={item.url}
+            className="space-y-[6px] max-w-[360px] px-3 mx-2 py-2 font-mono
+            bg-transparent hover:text-yellow text-sm text-secondary"
+          >
+            {item.title}
+          </a>
         ))}
-      </div>
-      <ul className="pt-4 border-t border-border">
-        <li className="opacity-50 hover:opacity-100">
-          <NavLink
-            name="About this site"
-            href="https://github.com/iamnbutler/new-leaf/blob/main/README.md"
-          />
-        </li>
-        <li className="opacity-50 hover:opacity-100">
-          <NavLink
-            name="Pull Requests"
-            href="https://github.com/iamnbutler/new-leaf/pulls"
-          />
-        </li>
-
-        <li className="opacity-50 hover:opacity-100">
-          <NavLink
-            name="Version History"
-            href="https://github.com/iamnbutler/new-leaf/releases"
-          />
-        </li>
-
-      </ul>
+      </menu>
     </nav>
   );
 }
