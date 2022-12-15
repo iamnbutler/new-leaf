@@ -1,5 +1,5 @@
 import NavLink from "./NavLink";
-import { allPosts } from "contentlayer/generated"
+import { posts } from "./post/Posts";
 
 const metaNav = [
   {
@@ -19,7 +19,7 @@ export default function LeftNav() {
       aria-label="Sidebar"
     >
       <div className="py-4 space-y-px">
-        {allPosts.map((item) => (
+        {posts.map((item) => (
           <NavLink
             item={item}
             key={item.uuid}
