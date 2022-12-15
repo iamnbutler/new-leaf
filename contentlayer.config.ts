@@ -50,7 +50,7 @@ export const Post = defineDocumentType(() => ({
     },
     url: {
       type: "string",
-      resolve: (post) => `/posts/${slugify(post.title, slugifyOptions)}`,
+      resolve: (post) => `/blog/${slugify(post.title, slugifyOptions)}`,
     },
   },
 }))
