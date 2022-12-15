@@ -1,23 +1,13 @@
-import { posts } from "components/post/Posts"
+import { posts } from "components/blog/Posts"
+import Markdown from "components/Markdown"
 import { Post } from "contentlayer/generated"
-import ReactMarkdown from "react-markdown"
-import rehypeSlug from "rehype-slug"
-import remarkGfm from "remark-gfm"
-// https://github.com/rehypejs/rehype-highlight
-// Also looks good: https://github.com/timlrx/rehype-prism-plus
-// And this: https://github.com/shikijs/shiki
-import rehypeHighlight from 'rehype-highlight'
 
 function Article({ post }: { post: Post }) {
   return (
     <article>
       <h2>{post.title}</h2>
       <time>{post.date_created}</time>
-      <ReactMarkdown
-        children={post.body.raw}
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug, rehypeHighlight]}
-      />
+      <Markdown content={post.body.raw} />
     </article>
   )
 }
