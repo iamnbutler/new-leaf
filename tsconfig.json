@@ -28,12 +28,18 @@
       "./types",
       "node_modules/@types"
     ] /* List of folders to include type definitions from. */,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "dist",
