@@ -9,7 +9,7 @@ interface MarkdownProps {
 }
 
 export const markdownH1 =
-  "md-h1 text-5xl font-light leading-[1.15] mt-8 mb-4"
+  "md-h1 text-5xl font-light text-primary leading-[1.15] mt-8 mb-4"
 export const markdownH2 =
   "md-h2 text-3xl font-bold text-aqua font-regular mt-16 mb-4"
 export const markdownH3 =
@@ -25,7 +25,9 @@ export const markdownIMG =
 export const markdownBLOCKQUOTE =
   "text-md text-secondary pl-4 border-l border-l-2 border-purple"
 export const markdownPRE =
-  "bg-surface p-3 rounded-lg border border-border overflow-x-auto text-sm drop-shadow-md"
+  "bg-surface p-3 rounded-lg border border-border text-secondary overflow-x-auto text-sm drop-shadow-md"
+export const markdownCODE =
+  "bg-surface p-1 rounded text-sm text-secondary"
 
 export default function Markdown({ children, margins = true }: MarkdownProps) {
 
@@ -46,7 +48,8 @@ export default function Markdown({ children, margins = true }: MarkdownProps) {
           p: ({ node, ...props }) => <p className={markdownStyle(markdownP)} {...props} />,
           a: ({ node, ...props }) => <a className={markdownStyle(markdownA)} {...props} />,
           blockquote: ({ node, ...props }) => <blockquote className={markdownStyle(markdownBLOCKQUOTE)} {...props} />,
-          pre: ({ node, ...props }) => <pre className={markdownStyle(markdownPRE)} {...props} />
+          pre: ({ node, ...props }) => <pre className={markdownStyle(markdownPRE)} {...props} />,
+          code: ({ node, ...props }) => <code className={markdownStyle(markdownCODE)} {...props} />
         }}
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSlug]} />

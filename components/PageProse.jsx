@@ -10,10 +10,10 @@ export default function PageProse({
 }) {
   return (
     <>
-      <div className="px-8">
+      <div className="px-6">
         <div className="text-lg"></div>
         {children && (
-          <main className="py-12 text-xl text-primary">
+          <main className="py-8 text-xl text-primary">
             <article className="pb-12">
               <header>
                 <TopDivider />
