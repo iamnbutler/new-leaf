@@ -31,8 +31,8 @@ export default function LeftNav() {
           <a
             href={item.url}
             key={item.url}
-            className="space-y-[6px] max-w-[360px] px-3 mx-2 py-2 rounded font-mono
-            bg-transparent hover:bg-surface text-sm text-secondary"
+            className="space-y-[6px] max-w-[360px] px-3 mx-2 py-2 font-mono
+            bg-transparent hover:text-yellow text-sm text-secondary"
           >
             {item.title}
           </a>

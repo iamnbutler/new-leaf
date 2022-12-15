@@ -22,9 +22,8 @@ export default function TopNav() {
         <div className="flex items-center space-x-4 grow">
           <Link
             href="/"
-            className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-yellow hover:opacity-80"
+            className="flex space-x-3 py-2 font-serif italic font-black opacity-100 text-md text-green hover:text-yellow"
           >
-            <span className="flex">🌱</span>
             <span className="flex">Nate Butler</span>
           </Link>
         </div>

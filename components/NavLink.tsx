@@ -11,7 +11,7 @@ export default function Link({ item }: { item: Post }) {
     <NextLink href={url} aria-current={current && "page"}>
       <div className={`
         space-y-[6px] max-w-[360px] px-3 mx-2 py-2 rounded font-mono
-        bg-transparent hover:bg-surface
+        bg-transparent group
       `}>
         <div className="flex space-x-1 items-center">
           <span className="truncate text-sm text-secondary">{date_created}</span>
@@ -22,7 +22,7 @@ export default function Link({ item }: { item: Post }) {
           )}
         </div>
         <div className="flex space-x-1 items-center">
-          <span className={`${current ? `text-orange-light` : `text-primary`} truncate`}>{title}</span>
+          <span className={`${current ? `text-orange-light` : `text-primary`} line-clamp-2 group-hover:text-yellow`}>{title}</span>
         </div>
         <p className="text-light-3 text-sm text-light text-secondary line-clamp-3">{description}</p>
       </div>
