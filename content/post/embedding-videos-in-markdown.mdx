@@ -13,7 +13,7 @@ When building Zed.dev we ran into this issue, and I came up with a somewhat obvi
 
 When a markdown image tag (`![Alt Tag](path/to/image/src.format)`) provides a source with a video format (`.webm`, `.mp4`, `.mov`) we render a video component instead of an image component.
 
-```tsx
+```typescript
 // HACK: Check if src is a video format. If so, render a video instead of an image
 
 // Provide a list of video formats you want to support
@@ -69,7 +69,7 @@ There are a lot of ways we could take this further:
 ### Frontmatter
 There is probably an alternate approach using frontmatter and custom IDs, something kind of like this:
 
-```markdown
+```md
 ---
 title: My Title
 videos:
@@ -93,7 +93,7 @@ Then use some shenanigans to swap the cover image and the video element.
 ### Custom Video Element
 If you have the option to use something like `mdx` you can always just write a custom video element and call it inside your markdown like this:
 
-```mdx 
+```md 
 # My Title
 
 <Video
