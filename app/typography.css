@@ -1,0 +1,19 @@
+html {
+  color: var(--primary);
+}
+
+a, a:visited {
+  color: var(--orange-light);
+}
+
+a:hover {
+  color: var(--yellow-light);
+}
+
+pre {
+  background-color: var(--surface);
+}
+
+code {
+  font-family: "JetBrains Mono";
+}

@@ -1,0 +1,106 @@
+:root,
+html {
+  --neutral-900: #32302f;
+  --neutral-800: #3c3836;
+  --neutral-700: #504945;
+  --neutral-600: #665c54;
+  --neutral-400: #bdae93;
+  --neutral-300: #d5c4a1;
+  --neutral-200: #ebdbb2;
+  --neutral-100: #fbf1c7;
+  
+  --dark-0: #1C2021;
+  --dark-1: #282828;
+  --dark-2: #3D3836;
+  --dark-3: #514944;
+  --dark-4: #685C53;
+  --dark-5: #7F6E63;
+  
+  --light-0: #FDF1C2;
+  --light-1: #EEDAAD;
+  --light-2: #D9C39D;
+  --light-3: #C0AD90;
+  --light-4: #AB9881;
+  --light-5: #958272;
+
+  --red: #CC241D;
+  --red-light: #FB4934;
+  --orange: #E75300;
+  --orange-light: #FF7700;
+  --yellow: #E29600;
+  --yellow-light: #FFBA00;
+  --green: #98971A;
+  --green-light: #B8BB26;
+  --blue: #278789;
+  --blue-light: #7AA697;
+  --aqua: #569F65;
+  --aqua-light: #7FC274;
+  --purple: #BD5D87;
+  --purple-light: #E0819B;
+  --brown: #AB9881;
+  --brown-light: #EEDAAD;
+}
+
+[data-theme='dark'] {
+  --background: var(--dark-0);
+  --border: var(--dark-2);
+  --surface: var(--dark-1);
+  --primary: var(--light-0);
+  --secondary: var(--light-2);
+  --semi: rgba(255,255,255,0.1);
+  --onMedia: var(--light-1);
+  --theme-red: var(--red-light);
+  --theme-orange: var(--orange-light);
+  --theme-yellow: var(--yellow-light);
+  --theme-green: var(--green-light);
+  --theme-blue: var(--blue-light);
+  --theme-aqua: var(--aqua-light);
+  --theme-purple: var(--purple-light);
+  --theme-brown: var(--brown-light);
+}
+
+[data-theme='light'] {
+  --background: var(--light-0);
+  --border: var(--light-2);
+  --surface: var(--light-1);
+  --primary: var(--dark-0);
+  --secondary: var(--dark-2);
+  --semi: rgba(0,0,0,0.1);
+  --onMedia: var(--dark-1);
+  --theme-red: var(--red);
+  --theme-orange: var(--orange);
+  --theme-yellow: var(--yellow);
+  --theme-green: var(--green);
+  --theme-blue: var(--blue);
+  --theme-aqua: var(--aqua);
+  --theme-purple: var(--purple);
+  --theme-brown: var(--brown);
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  width: 100vw;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  scrollbar-gutter: stable;
+  background-color: var(--background);
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.005);
+}

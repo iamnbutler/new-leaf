@@ -1,94 +1,159 @@
 /*
-
-Atom One Dark by Daniel Gamage
-Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-base:    #282c34
-mono-1:  #abb2bf
-mono-2:  #818896
-mono-3:  #5c6370
-hue-1:   #56b6c2
-hue-2:   #61aeee
-hue-3:   #c678dd
-hue-4:   #98c379
-hue-5:   #e06c75
-hue-5-2: #be5046
-hue-6:   #d19a66
-hue-6-2: #e6c07b
-
+base00  #1d2021  Default Background
+base01  #3c3836  Lighter Background (Used for status bars, line number and folding marks)
+base02  #504945  Selection Background
+base03  #665c54  Comments, Invisibles, Line Highlighting
+base04  #bdae93  Dark Foreground (Used for status bars)
+base05  #d5c4a1  Default Foreground, Caret, Delimiters, Operators
+base06  #ebdbb2  Light Foreground (Not often used)
+base07  #fbf1c7  Light Background (Not often used)
+base08  #fb4934  Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+base09  #fe8019  Integers, Boolean, Constants, XML Attributes, Markup Link Url
+base0A  #fabd2f  Classes, Markup Bold, Search Text Background
+base0B  #b8bb26  Strings, Inherited Class, Markup Code, Diff Inserted
+base0C  #8ec07c  Support, Regular Expressions, Escape Characters, Markup Quotes
+base0D  #83a598  Functions, Methods, Attribute IDs, Headings
+base0E  #d3869b  Keywords, Storage, Selector, Markup Italic, Diff Changed
+base0F  #d65d0e  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 */
 
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+
 .hljs {
-  color: #abb2bf;
-  background: #282c34;
+  color: var(--primary);
 }
 
-.hljs-comment,
-.hljs-quote {
-  color: #5c6370;
-  font-style: italic;
+.hljs::selection,
+.hljs ::selection {
+  background-color: #504945;
+  color: #d5c4a1;
 }
 
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-  color: #c678dd;
+
+/* purposely do not highlight these things */
+.hljs-formula,
+.hljs-params,
+.hljs-property
+{}
+
+/* base03 - #665c54 -  Comments, Invisibles, Line Highlighting */
+.hljs-comment {
+  color: var(--light-3);
 }
 
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-  color: #e06c75;
+/* base04 - #bdae93 -  Dark Foreground (Used for status bars) */
+.hljs-tag {
+  color: var(--dark-3);
 }
 
-.hljs-literal {
-  color: #56b6c2;
+/* base05 - #d5c4a1 -  Default Foreground, Caret, Delimiters, Operators */
+.hljs-subst,
+.hljs-punctuation,
+.hljs-operator {
+  color: var(--dark-2);
 }
 
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta .hljs-string {
-  color: #98c379;
+.hljs-operator {
+  opacity: 0.7;
 }
 
-.hljs-attr,
+/* base08 - Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
+.hljs-bullet,
 .hljs-variable,
 .hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-  color: #d19a66;
+.hljs-selector-tag,
+.hljs-name,
+.hljs-deletion {
+  color: var(--theme-red);
 }
 
+/* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
 .hljs-symbol,
-.hljs-bullet,
+.hljs-number,
 .hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-  color: #61aeee;
+.hljs-attr,
+.hljs-variable.constant_,
+.hljs-literal {
+  color: var(--theme-purple);
 }
 
-.hljs-built_in,
-.hljs-title.class_,
-.hljs-class .hljs-title {
-  color: #e6c07b;
-}
-
-.hljs-emphasis {
-  font-style: italic;
+/* base0A - Classes, Markup Bold, Search Text Background */
+.hljs-title,
+.hljs-class .hljs-title,
+.hljs-title.class_
+{
+  color: var(--theme-yellow);
 }
 
 .hljs-strong {
-  font-weight: bold;
+  font-weight:bold;
+  color: #fabd2f;
 }
 
-.hljs-link {
-  text-decoration: underline;
+/* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
+.hljs-code,
+.hljs-addition,
+.hljs-title.class_.inherited__,
+.hljs-string {
+  color: var(--theme-green);
+}
+
+/* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
+.hljs-built_in,
+.hljs-doctag, /* guessing */
+.hljs-quote,
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+  color: var(--theme-aqua);
+}
+
+/* base0D - Functions, Methods, Attribute IDs, Headings */
+.hljs-function .hljs-title,
+.hljs-attribute,
+.ruby .hljs-property,
+.hljs-title.function_,
+.hljs-section {
+  color: var(--theme-aqua);
+}
+
+/* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
+.hljs-type,
+/* .hljs-selector-id, */
+/* .hljs-selector-class, */
+/* .hljs-selector-attr, */
+/* .hljs-selector-pseudo, */
+.hljs-template-tag,
+.diff .hljs-meta,
+.hljs-keyword {
+  color: var(--theme-red);
+}
+.hljs-emphasis {
+  color: var(--theme-purple);
+  font-style: italic;
+}
+
+/* base0F - Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?> */
+.hljs-meta,
+/*
+prevent top level .keyword and .string scopes
+from leaking into meta by accident
+*/
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string
+{
+  color: var(--theme-orange);
+}
+
+.hljs-meta .hljs-keyword,
+/* for v10 compatible themes */
+.hljs-meta-keyword {
+  font-weight: bold;
 }

@@ -5,6 +5,7 @@ import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 // https://github.com/rehypejs/rehype-highlight
 // Also looks good: https://github.com/timlrx/rehype-prism-plus
+// And this: https://github.com/shikijs/shiki
 import rehypeHighlight from 'rehype-highlight'
 
 function Article({ post }: { post: Post }) {
