@@ -1,4 +1,4 @@
-import { allPosts } from "contentlayer/generated"
+import { allPosts, Post } from "contentlayer/generated"
 
 const sortedPosts = allPosts.sort((a, b) => {
   const dateA = a.date_created;
@@ -14,3 +14,13 @@ const sortedPosts = allPosts.sort((a, b) => {
 });
 
 export const posts = sortedPosts
+
+export function usePost(slug: string) {
+  const post = posts.find(q => q.slug === slug)
+
+  if (post !== undefined) {
+    return post
+  } else {
+    throw new Error(`usePost: Post ${slug} couldn't be found!`)
+  }
+}
