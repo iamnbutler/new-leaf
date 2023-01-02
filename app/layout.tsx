@@ -14,8 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme='dark'>
       <body>
-        <Header />
-        {children}
+        <div className="flex">
+          <div className="shrink-0 w-[240px] h-screen sticky top-0">
+            <Header />
+          </div>
+          {children}
+        </div>
       </body>
     </html>
   );

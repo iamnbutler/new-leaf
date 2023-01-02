@@ -1,4 +1,4 @@
-import { allPosts, Post } from "contentlayer/generated"
+import { allPosts } from "contentlayer/generated"
 
 const sortedPosts = allPosts.sort((a, b) => {
   const dateA = a.date_created;
