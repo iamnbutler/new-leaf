@@ -1,5 +1,5 @@
+import PostLayout from "app/Post";
 import { posts, usePost } from "components/blog/Posts";
-import Markdown from "components/Markdown"
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
@@ -18,9 +18,6 @@ export default function BlogPost({ params }: BlogParams) {
   const post = usePost(slug)
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <Markdown content={post.body.raw} />
-    </div>
+    <PostLayout post={post} current={true} />
   )
 }
